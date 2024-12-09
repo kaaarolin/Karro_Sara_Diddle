@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slideshow</title>
+</head>
+<body style="background: linear-gradient(to bottom, pink, hotpink); font-family: Arial, sans-serif; color: white; margin: 0; padding: 0; display: flex; justify-content: center; align-items: center; height: 100vh; flex-direction: column;">
+
+    <!-- Title Section (Positioned Higher) -->
+    <h1 style="color: white; font-size: 2.5rem; font-weight: bold; text-align: center; margin-bottom: 20px; text-shadow: 3px 3px 5px rgba(255, 255, 255, 0.5); position: relative; top: -50px;">
+        Click to see our glittery diddls <3
+    </h1>
+
+    <div style="text-align: center; margin-bottom: 20px;">
+        <label for="slide1" style="color: white; font-size: 1.2rem; margin: 0 10px; cursor: pointer;"><3</label>
+        <input type="radio" name="slideshow" id="slide1" checked>
+        <label for="slide2" style="color: white; font-size: 1.2rem; margin: 0 10px; cursor: pointer;">Wizard</label>
+        <input type="radio" name="slideshow" id="slide2">
+        <label for="slide3" style="color: white; font-size: 1.2rem; margin: 0 10px; cursor: pointer;">Hug</label>
+        <input type="radio" name="slideshow" id="slide3">
+        <label for="slide4" style="color: white; font-size: 1.2rem; margin: 0 10px; cursor: pointer;">Butterfly</label>
+        <input type="radio" name="slideshow" id="slide4">
+        <label for="slide5" style="color: white; font-size: 1.2rem; margin: 0 10px; cursor: pointer;">Party</label>
+        <input type="radio" name="slideshow" id="slide5">
+    </div>
+
+    <!-- Slideshow Images -->
+    <div style="position: relative; width: 400px; height: auto;">
+        <div style="display: flex;">
+            <img src="https://www.picgifs.com/glitter-gifs/d/diddl/picgifs-diddl-619840.gif" style="width: 400px; height: auto; border-radius: 10px; display: block;" id="img1">
+            <img src="https://www.picgifs.com/glitter-gifs/d/diddl/picgifs-diddl-1427460.gif" style="width: 300px; height: auto; border-radius: 10px; display: none;" id="img2">
+            <img src="https://www.picgifs.com/glitter-gifs/d/diddl/picgifs-diddl-4372739.gif" style="width: 400px; height: auto; border-radius: 10px; display: none;" id="img3">
+            <img src="https://www.picgifs.com/glitter-gifs/d/diddl/picgifs-diddl-3813756.gif" style="width: 400px; height: auto; border-radius: 10px; display: none;" id="img4">
+            <img src="https://www.picgifs.com/glitter-gifs/d/diddl/picgifs-diddl-31020.gif" style="width: 400px; height: auto; border-radius: 10px; display: none;" id="img5">
+        </div>
+    </div>
+
+    <script>
+        const slides = ['img1', 'img2', 'img3', 'img4', 'img5'];
+        const radioButtons = ['slide1', 'slide2', 'slide3', 'slide4', 'slide5'];
+
+        radioButtons.forEach((radioButton, index) => {
+            document.getElementById(radioButton).addEventListener('change', function() {
+                slides.forEach((slide, i) => {
+                    document.getElementById(slide).style.display = i === index ? 'block' : 'none';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
